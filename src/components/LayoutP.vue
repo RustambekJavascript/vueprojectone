@@ -92,7 +92,13 @@
               сервис банальным и комфортным для наши клиентов, увеличивая
               эффективность, комфорт, доступность курьерских услуг.
             </p>
-            <v-btn type="button" class="btn">Отслеживание </v-btn>
+            <v-btn
+              type="button"
+              class="btn"
+              style="padding: 15px 30px; margin-left: 0"
+              >Узнать больше
+            </v-btn>
+            <!-- <ButtonV>Hello</ButtonV> -->
           </div>
           <div class="about__photo">
             <div class="about__photo-container">
@@ -104,7 +110,7 @@
               </div>
               <div class="about__photo-info">
                 <div class="about__photo-info-inner">
-                  <p>15350 +</p>
+                  <p class="font-weight-regular">15350 +</p>
                   <p>Доставлено товаров</p>
                 </div>
               </div>
@@ -120,6 +126,7 @@
 <script>
 export default {
   name: "LayoutP",
+
   data() {
     return {
       lists: [
@@ -150,6 +157,20 @@ export default {
 </script>
 
 <style scoped>
+:root {
+  --weight4: 400;
+  --weight5: 500;
+  --weight6: 600;
+  --weight7: 700;
+  --weight8: 800;
+  --color-main: #3c6;
+  --color-dark: #303446;
+  --color-text: #aaa3bf;
+  --color-bg: #f6f5f9;
+  --color-info-bg: #e4fbec;
+  --color-border: #e5e5e5;
+  --line-height25: 25px;
+}
 .navbar {
   display: flex;
   align-items: center;
@@ -339,12 +360,24 @@ v-main .one_section {
   bottom: -70px;
   right: -5px;
   padding: 30px;
-  background-color: var(--color-main);
+  background-color: #33cc66;
   color: #fff;
   border-radius: 0 14px 14px 14px;
 }
 
 .about__photo-info-inner {
   position: relative;
+}
+
+.about__photo-info-inner:before {
+  content: "";
+  position: absolute;
+  border-left: 0 solid transparent;
+  border-bottom: 35px solid transparent;
+  border-right: 33px solid #33cc66;
+  border-top: 0 solid transparent;
+  line-height: 0;
+  left: -102px;
+  top: -50px;
 }
 </style>
