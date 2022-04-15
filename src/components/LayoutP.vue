@@ -112,6 +112,7 @@
           </div>
         </div>
       </section>
+      <!-- slider artel -->
     </v-main>
   </v-container>
 </template>
