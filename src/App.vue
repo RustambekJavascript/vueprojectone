@@ -1,75 +1,77 @@
 <template>
-  <div class="d-flex justify-content-between m-3">
-    <div class="d-flex flex-wrap w-50 justify-content-evenly">
-      <v-btn-toggle
-        type="button"
-        class="btn btn-success"
-        @click="changeCategory(null)"
-      >
-        Все
-      </v-btn-toggle>
-      <v-btn-toggle
-        type="button"
-        class="btn btn-success"
-        @click="changeCategory(54)"
-      >
-        Новости
-      </v-btn-toggle>
-      <v-btn-toggle
-        type="button"
-        class="btn btn-success"
-        @click="changeCategory(55)"
-      >
-        События
-      </v-btn-toggle>
-      <v-btn-toggle
-        type="button"
-        class="btn btn-success"
-        @click="changeCategory(56)"
-      >
-        Акции
-      </v-btn-toggle>
-    </div>
-    <div>
-      <form>
-        <input
-          class="form-control"
-          v-model="search"
-          type="text"
-          placeholder="Search"
-        />
-      </form>
-    </div>
-  </div>
-
-  <div class="d-flex flex-wrap justify-content-between items">
-    <v-card
-      class="mx-auto item"
-      max-width="366"
-      v-for="(item, index) in filterItems"
-      :key="index"
-    >
-      <div class="card__img-items">
-        <div class="card__img">
-          <img :src="item.image_url" alt="rasm" />
-        </div>
-        <div class="new__type">
-          <p class="new__type-text">
-            {{ item.category_name }}
-          </p>
-        </div>
+  <v-container>
+    <div class="d-flex justify-content-between m-3">
+      <div class="d-flex flex-wrap w-50 justify-content-between">
+        <v-btn-toggle
+          type="button"
+          class="btn btn-success width-btn"
+          @click="changeCategory(null)"
+        >
+          Все
+        </v-btn-toggle>
+        <v-btn-toggle
+          type="button"
+          class="btn btn-success width-btn"
+          @click="changeCategory(54)"
+        >
+          Новости
+        </v-btn-toggle>
+        <v-btn-toggle
+          type="button"
+          class="btn btn-success width-btn"
+          @click="changeCategory(55)"
+        >
+          События
+        </v-btn-toggle>
+        <v-btn-toggle
+          type="button"
+          class="btn btn-success width-btn"
+          @click="changeCategory(56)"
+        >
+          Акции
+        </v-btn-toggle>
       </div>
-      <v-card-text class="card_text">
-        <h6 class="text--primary max-lines">{{ item.title }}</h6>
+      <div>
+        <form>
+          <input
+            class="form-control"
+            v-model="search"
+            type="text"
+            placeholder="Search"
+          />
+        </form>
+      </div>
+    </div>
 
-        <div class="description">
-          <p>
-            {{ item.description }}
-          </p>
+    <div class="d-flex flex-wrap justify-content-between items">
+      <v-card
+        class="mx-auto item"
+        max-width="366"
+        v-for="(item, index) in filterItems"
+        :key="index"
+      >
+        <div class="card__img-items">
+          <div class="card__img">
+            <img :src="item.image_url" alt="rasm" />
+          </div>
+          <div class="new__type">
+            <p class="new__type-text">
+              {{ item.category_name }}
+            </p>
+          </div>
         </div>
-      </v-card-text>
-    </v-card>
-  </div>
+        <v-card-text class="card_text">
+          <h6 class="text--primary max-lines">{{ item.title }}</h6>
+
+          <div class="description">
+            <p>
+              {{ item.description }}
+            </p>
+          </div>
+        </v-card-text>
+      </v-card>
+    </div>
+  </v-container>
 </template>
 
 <script>
@@ -129,6 +131,9 @@ export default {
 </script>
 
 <style>
+.width-btn {
+  width: 100px;
+}
 .items {
   display: flex;
   flex-wrap: wrap;
